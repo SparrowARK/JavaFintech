@@ -1,6 +1,10 @@
 package com.scotiabank.corebanking.model;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
 public class BankAccount {
+    @Id
     private Long accountNumber;
     private String ownerName;
     private double balance;
