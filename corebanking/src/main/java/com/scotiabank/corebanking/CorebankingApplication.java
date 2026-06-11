@@ -5,9 +5,12 @@ import com.scotiabank.corebanking.repository.BankAccountRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 public class CorebankingApplication {
 
 	public static void main(String[] args) {
@@ -32,5 +35,8 @@ public class CorebankingApplication {
 			System.out.println("Test level loaded. Spawned account for aaditya and matthew");
 		};
 	}
-
+	@Bean
+	public WebClient.Builder webClientBuilder() {
+		return WebClient.builder();
+	}
 }
