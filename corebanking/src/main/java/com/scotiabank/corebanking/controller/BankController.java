@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
+
 @RequestMapping("/api/bank")
 public class BankController {
     private final BankService bankService;
